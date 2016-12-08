@@ -13,6 +13,8 @@
 		25E90A991DF949F200F27F29 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25E90A971DF949F200F27F29 /* Main.storyboard */; };
 		25E90A9B1DF949F200F27F29 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 25E90A9A1DF949F200F27F29 /* Assets.xcassets */; };
 		25E90A9E1DF949F200F27F29 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 25E90A9C1DF949F200F27F29 /* LaunchScreen.storyboard */; };
+		25E90AA91DF94A5E00F27F29 /* MainViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 25E90AA81DF94A5E00F27F29 /* MainViewController.m */; };
+		25E90AAB1DF94B0300F27F29 /* HealthKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 25E90AAA1DF94B0300F27F29 /* HealthKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +28,10 @@
 		25E90A9A1DF949F200F27F29 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		25E90A9D1DF949F200F27F29 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		25E90A9F1DF949F200F27F29 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		25E90AA71DF94A5E00F27F29 /* MainViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MainViewController.h; sourceTree = "<group>"; };
+		25E90AA81DF94A5E00F27F29 /* MainViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MainViewController.m; sourceTree = "<group>"; };
+		25E90AAA1DF94B0300F27F29 /* HealthKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = HealthKit.framework; path = System/Library/Frameworks/HealthKit.framework; sourceTree = SDKROOT; };
+		25E90AAC1DF94B0300F27F29 /* cHeathKit.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = cHeathKit.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,6 +39,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				25E90AAB1DF94B0300F27F29 /* HealthKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -42,6 +49,7 @@
 		25E90A821DF949F200F27F29 = {
 			isa = PBXGroup;
 			children = (
+				25E90AAA1DF94B0300F27F29 /* HealthKit.framework */,
 				25E90A8D1DF949F200F27F29 /* cHeathKit */,
 				25E90A8C1DF949F200F27F29 /* Products */,
 			);
@@ -58,11 +66,9 @@
 		25E90A8D1DF949F200F27F29 /* cHeathKit */ = {
 			isa = PBXGroup;
 			children = (
-				25E90A911DF949F200F27F29 /* AppDelegate.h */,
-				25E90A921DF949F200F27F29 /* AppDelegate.m */,
-				25E90A941DF949F200F27F29 /* ViewController.h */,
-				25E90A951DF949F200F27F29 /* ViewController.m */,
-				25E90A971DF949F200F27F29 /* Main.storyboard */,
+				25E90AAC1DF94B0300F27F29 /* cHeathKit.entitlements */,
+				25E90AA61DF94A4C00F27F29 /* Main */,
+				25E90AA51DF94A4600F27F29 /* Basic */,
 				25E90A9A1DF949F200F27F29 /* Assets.xcassets */,
 				25E90A9C1DF949F200F27F29 /* LaunchScreen.storyboard */,
 				25E90A9F1DF949F200F27F29 /* Info.plist */,
@@ -77,6 +83,27 @@
 				25E90A8F1DF949F200F27F29 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		25E90AA51DF94A4600F27F29 /* Basic */ = {
+			isa = PBXGroup;
+			children = (
+				25E90A911DF949F200F27F29 /* AppDelegate.h */,
+				25E90A921DF949F200F27F29 /* AppDelegate.m */,
+				25E90A941DF949F200F27F29 /* ViewController.h */,
+				25E90A951DF949F200F27F29 /* ViewController.m */,
+				25E90A971DF949F200F27F29 /* Main.storyboard */,
+			);
+			name = Basic;
+			sourceTree = "<group>";
+		};
+		25E90AA61DF94A4C00F27F29 /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				25E90AA71DF94A5E00F27F29 /* MainViewController.h */,
+				25E90AA81DF94A5E00F27F29 /* MainViewController.m */,
+			);
+			name = Main;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -110,6 +137,12 @@
 				TargetAttributes = {
 					25E90A8A1DF949F200F27F29 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = 5AWV783T4E;
+						SystemCapabilities = {
+							com.apple.HealthKit = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -152,6 +185,7 @@
 				25E90A961DF949F200F27F29 /* ViewController.m in Sources */,
 				25E90A931DF949F200F27F29 /* AppDelegate.m in Sources */,
 				25E90A901DF949F200F27F29 /* main.m in Sources */,
+				25E90AA91DF94A5E00F27F29 /* MainViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -263,6 +297,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = cHeathKit/cHeathKit.entitlements;
 				INFOPLIST_FILE = cHeathKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uknower.cHeathKit;
@@ -274,6 +309,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = cHeathKit/cHeathKit.entitlements;
 				INFOPLIST_FILE = cHeathKit/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.uknower.cHeathKit;
@@ -300,6 +336,7 @@
 				25E90AA41DF949F200F27F29 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
